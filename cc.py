@@ -2,8 +2,13 @@ from gpiozero import Button
 
 import requests
 import json
+import smtplib
 
 import geocoder
+
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
+
 g = geocoder.ip('me')
 print(g.latlng)
 
@@ -36,5 +41,34 @@ def ambulance():
 policebutton.when_pressed =police
 firebutton.when_pressed =fire
 ambulancebutton.when_pressed =ambulance
+
+
+
+# set up the SMTP server
+s = smtplib.SMTP(host='smtp.gmail.com', port=587)
+s.starttls()
+MY_ADDRESS="rasppiproject100@gmail.com"
+PASSWORD="lola1997@naj"
+s.login(MY_ADDRESS, PASSWORD)
+
+
+msg = MIMEMultipart() 
+message_template = reg
+    
+message= message_template 
+
+msg['From']=MY_ADDRESS
+msg['To']="rfire@protonmail.com"
+msg['Subject']="This is TEST"
+        
+        # add in the message body
+msg.attach(MIMEText(message, 'plain'))
+        
+        # send the message via the server set up earlier.
+s.send_message(msg)
+del msg
+        
+    # Terminate the SMTP session and close the connection
+s.quit()
 
 
