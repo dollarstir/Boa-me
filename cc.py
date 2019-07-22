@@ -45,18 +45,20 @@ ambulancebutton.when_pressed =ambulance
 
 
 # set up the SMTP server
-s = smtplib.SMTP(host='your_host_address_here', port=your_port_here)
+s = smtplib.SMTP(host='smtp.gmail.com', port=587)
 s.starttls()
+MY_ADDRESS="rasppiproject100@gmail.com"
+PASSWORD="lola1997@naj"
 s.login(MY_ADDRESS, PASSWORD)
 
 
- msg = MIMEMultipart() 
- message_template = reg
+msg = MIMEMultipart() 
+message_template = reg
     
 message= message_template 
 
 msg['From']=MY_ADDRESS
-msg['To']=email
+msg['To']="rfire@protonmail.com"
 msg['Subject']="This is TEST"
         
         # add in the message body
