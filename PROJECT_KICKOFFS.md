@@ -28,7 +28,7 @@ Here are some things to consider while deciding on your final week project:
 
 ### Answers to the questions
 
-* 1.Emergency response system:this 
+* 1.Emergency response system : this 
 is a sytem called "Boa me " which is to send emergency signals from a distressed person
 to the police,Ambulance or Fire service
 
