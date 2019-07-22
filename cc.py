@@ -55,18 +55,18 @@ s.login(MY_ADDRESS, PASSWORD)
     
 message= message_template 
 
- msg['From']=MY_ADDRESS
- msg['To']=email
- msg['Subject']="This is TEST"
+msg['From']=MY_ADDRESS
+msg['To']=email
+msg['Subject']="This is TEST"
         
         # add in the message body
- msg.attach(MIMEText(message, 'plain'))
+msg.attach(MIMEText(message, 'plain'))
         
         # send the message via the server set up earlier.
- s.send_message(msg)
- del msg
+s.send_message(msg)
+del msg
         
     # Terminate the SMTP session and close the connection
-  s.quit()
+s.quit()
 
 
