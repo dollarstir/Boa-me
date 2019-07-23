@@ -10,6 +10,10 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
 
+from gtts import gTTS
+import os
+
+
 getto = ["rfire@protonmail.com","rpolice@protonmail.com","rambulance@protonmail.com"]
 getsubject= "I NEED HELP !!!!!"
 
@@ -83,6 +87,12 @@ def police():
         # Terminate the SMTP session and close the connection
     s.quit()
 
+    tts = gTTS(text='Please stay calm, help is on the way', lang='en')
+    tts.speed=80
+    tts.save("good1.mp3")
+    os.system("good1.mp3")
+
+
 
 def fire ():
     
@@ -122,6 +132,10 @@ def fire ():
             
         # Terminate the SMTP session and close the connection
     s.quit()
+    tts = gTTS(text='Please stay calm, help is on the way', lang='en')
+    tts.speed=80
+    tts.save("good1.mp3")
+    os.system("good1.mp3")
 
 def ambulance():
     m3= ("hi , I am in need of the ambulance team at",latitude,longitude,city,reg)
@@ -153,6 +167,10 @@ def ambulance():
             
         # Terminate the SMTP session and close the connection
     s.quit()
+    tts = gTTS(text='Please stay calm, help is on the way', lang='en')
+    tts.speed=80
+    tts.save("good1.mp3")
+    os.system("good1.mp3")
 policebutton.when_pressed =police
 firebutton.when_pressed =fire
 ambulancebutton.when_pressed =ambulance
